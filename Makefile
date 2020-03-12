@@ -18,7 +18,8 @@ all: directories benchmarks bin/runner
 benchmarks: bin/mandelbrot.so bin/timer_spin.so bin/multikernel.so \
 	bin/cpu_inorder_walk.so bin/cpu_random_walk.so bin/inorder_walk.so \
 	bin/random_walk.so bin/sharedmem_timer_spin.so bin/counter_spin.so \
-	bin/timer_spin_default_stream.so bin/stream_action.so bin/task_host.so
+	bin/timer_spin_default_stream.so bin/stream_action.so bin/task_host.so \
+	bin/spin_fp16.so bin/spin_fp32.so bin/spin_int32.so bin/spin_int64.so
 
 visionworks: obj/cjson.o bin/runner
 	$(MAKE) -C ./src/third_party/VisionWorks-1.6-Demos
@@ -37,6 +38,22 @@ bin/timer_spin.so: src/timer_spin.cu $(BENCHMARK_DEPENDENCIES)
 
 bin/counter_spin.so: src/counter_spin.cu $(BENCHMARK_DEPENDENCIES)
 	nvcc --shared $(NVCCFLAGS) -o bin/counter_spin.so src/counter_spin.cu \
+		obj/benchmark_gpu_utilities.o
+
+bin/spin_fp16.so: src/spin_fp16.cu $(BENCHMARK_DEPENDENCIES)
+	nvcc --shared $(NVCCFLAGS) -o $@ $< \
+		obj/benchmark_gpu_utilities.o
+
+bin/spin_fp32.so: src/spin_fp32.cu $(BENCHMARK_DEPENDENCIES)
+	nvcc --shared $(NVCCFLAGS) -o $@ $< \
+		obj/benchmark_gpu_utilities.o
+
+bin/spin_int32.so: src/spin_int32.cu $(BENCHMARK_DEPENDENCIES)
+	nvcc --shared $(NVCCFLAGS) -o $@ $< \
+		obj/benchmark_gpu_utilities.o
+
+bin/spin_int64.so: src/spin_int64.cu $(BENCHMARK_DEPENDENCIES)
+	nvcc --shared $(NVCCFLAGS) -o $@ $< \
 		obj/benchmark_gpu_utilities.o
 
 bin/timer_spin_default_stream.so: src/timer_spin_default_stream.cu \

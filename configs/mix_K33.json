@@ -1,0 +1,28 @@
+{
+  "name": "mix kernel test (spin_int32 + spin_int32)",
+  "comment": "",
+  "max_iterations": 1,
+  "max_time": 0,
+  "cuda_device": 0,
+  "pin_cpus": true,
+  "benchmarks": [
+    {
+      "filename": "./bin/spin_int32.so",
+      "log_name": "mix_K33_1.json",
+      "label": "K3_1",
+      "thread_count": 1024,
+      "block_count": 20,
+      "data_size": 0,
+      "additional_info": 10000000
+    },
+    {
+      "filename": "./bin/spin_int32.so",
+      "log_name": "mix_K33_2.json",
+      "label": "K3_2",
+      "thread_count": 1024,
+      "block_count": 20,
+      "data_size": 0,
+      "additional_info": 10000000
+    }
+  ]
+}

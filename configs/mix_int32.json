@@ -1,0 +1,73 @@
+{
+  "name": "mix single kernel test (spin_int32)",
+  "comment": "This config is just for testing the spin_int32 benchmark",
+  "max_iterations": 1,
+  "max_time": 0,
+  "cuda_device": 0,
+  "pin_cpus": true,
+  "benchmarks": [
+    {
+      "filename": "./bin/spin_int32.so",
+      "log_name": "spin_int32_1.json",
+      "label": "Kernel 1",
+      "thread_count": 2048,
+      "block_count": 1,
+      "data_size": 0,
+      "additional_info": 2500000
+    },
+    {
+      "filename": "./bin/spin_int32.so",
+      "log_name": "spin_int32_2.json",
+      "label": "Kernel 2",
+      "thread_count": 1024,
+      "block_count": 1,
+      "data_size": 0,
+      "additional_info": 5000000
+    },
+    {
+      "filename": "./bin/spin_int32.so",
+      "log_name": "spin_int32_3.json",
+      "label": "Kernel 3",
+      "thread_count": 512,
+      "block_count": 1,
+      "data_size": 0,
+      "additional_info": 10000000
+    },
+    {
+      "filename": "./bin/spin_int32.so",
+      "log_name": "spin_int32_4.json",
+      "label": "Kernel 4",
+      "thread_count": 256,
+      "block_count": 1,
+      "data_size": 0,
+      "additional_info": 20000000
+    },
+    {
+      "filename": "./bin/spin_int32.so",
+      "log_name": "spin_int32_5.json",
+      "label": "Kernel 5",
+      "thread_count": 128,
+      "block_count": 1,
+      "data_size": 0,
+      "additional_info": 40000000
+    },
+    {
+      "filename": "./bin/spin_int32.so",
+      "log_name": "spin_int32_6.json",
+      "label": "Kernel 6",
+      "thread_count": 64,
+      "block_count": 1,
+      "data_size": 0,
+      "additional_info": 80000000
+    },
+    {
+      "filename": "./bin/spin_int32.so",
+      "log_name": "spin_int32_7.json",
+      "label": "Kernel 7",
+      "thread_count": 32,
+      "block_count": 1,
+      "data_size": 0,
+      "additional_info": 160000000
+    }
+  ]
+}

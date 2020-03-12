@@ -5,9 +5,12 @@
 # Usage: python view_timeline.py [results directory (default: ./results)]
 import glob
 import json
+import matplotlib
+matplotlib.use('agg')
 import matplotlib.pyplot as plot
 import numpy
 import sys
+
 
 def get_kernel_timeline(kernel_times):
     """Takes a single kernel invocation's information from the benchmark struct
@@ -317,7 +320,8 @@ def show_plots(filenames):
     figures = []
     for scenario in scenarios:
         figures.append(plot_scenario(scenarios[scenario], scenario))
-    plot.show()
+    # plot.show()
+    plot.savefig('result.png')
 
 if __name__ == "__main__":
     base_directory = "./results"

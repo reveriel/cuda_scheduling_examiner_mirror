@@ -9,17 +9,18 @@
       "filename": "./bin/timer_spin.so",
       "log_name": "ospert_2017_figure_5_log1.json",
       "label": "Small job (released first)",
-      "thread_count": 512,
+      "thread_count": 1024,
       "block_count": 1,
       "data_size": 0,
-      "additional_info": 1000000000
+      "additional_info": 1000000000,
+      "release_time": 0.3
     },
     {
       "filename": "./bin/timer_spin.so",
       "log_name": "ospert_2017_figure_5_log2.json",
       "label": "Larger job (released second)",
-      "thread_count": 512,
-      "block_count": 16,
+      "thread_count": 1024,
+      "block_count": 20,
       "data_size": 0,
       "additional_info": 1000000000,
       "release_time": 0.25
@@ -28,11 +29,11 @@
       "filename": "./bin/timer_spin.so",
       "log_name": "ospert_2017_figure_5_log3.json",
       "label": "Small job (released third)",
-      "thread_count": 512,
-      "block_count": 1,
+      "thread_count": 1024,
+      "block_count": 20,
       "data_size": 0,
       "additional_info": 500000000,
-      "release_time": 0.5
+      "release_time": 0.25
     }
   ]
 }
